@@ -1,0 +1,16 @@
+StudentID,Name,Age,Gender,Department,Year,Marks,Attendance,City
+101,Amit Sharma,20,Male,Computer Science,2,78,85,Delhi
+102,Priya Verma,21,Female,Electronics,3,88,90,Mumbai
+103,Rahul Singh,19,Male,Mechanical,1,67,75,Kanpur
+104,Neha Gupta,22,Female,Computer Science,4,91,95,Delhi
+105,Arjun Patel,20,Male,Civil,2,73,80,Ahmedabad
+106,Sneha Reddy,21,Female,Electronics,3,85,88,Hyderabad
+107,Vikas Yadav,23,Male,Mechanical,4,60,70,Lucknow
+108,Anjali Mehta,19,Female,Civil,1,82,92,Jaipur
+109,Rohit Kumar,22,Male,Computer Science,4,76,84,Patna
+110,Kavya Nair,20,Female,Electronics,2,89,93,Kochi
+111,Manish Tiwari,21,Male,Civil,3,58,65,Bhopal
+112,Pooja Das,19,Female,Mechanical,1,74,78,Kolkata
+113,Deepak Chauhan,23,Male,Computer Science,4,69,72,Noida
+114,Ritika Joshi,20,Female,Civil,2,92,97,Pune
+115,Sachin Malhotra,22,Male,Electronics,3,81,86,Chandigarh
