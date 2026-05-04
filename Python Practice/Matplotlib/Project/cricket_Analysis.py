@@ -20,6 +20,7 @@ select_srh = cleaned_df[(cleaned_df['batting_team'] ==
 srh_total_runs = select_srh['total_runs'].sum()
 # print(grouped_runs.index)
 # print(grouped_runs.values)
+rcb_extra_runs = select_srh.groupby("batsman")['extra_runs'].sum()
 
 fig, ax = plt.subplots(2, figsize=(10, 8))
 ax[0].bar(grouped_runs.index, grouped_runs.values, color='orange')
@@ -29,7 +30,7 @@ ax[0].set_ylabel("Runs")
 ax[0].set_xticks(grouped_runs.index)
 ax[0].set_yticks(grouped_runs.values)
 ax[0].text(
-    x=8, y=23, s=f"SRH Total Runs : {srh_total_runs}", fontsize=12, color="red")
+    x=8, y=23, s=f"SRH Total Runs : {srh_total_runs} \n Extras: {rcb_extra_runs.sum()}", fontsize=12, color="red")
 # plt.show()
 
 rcb_bowler_runs_concede = cleaned_df[(cleaned_df['bowling_team'] ==
@@ -49,10 +50,14 @@ rcb_bowler_runs_concede = cleaned_df[(cleaned_df['bowling_team'] ==
 
 # print(select_srh.head())
 srh_batsman_runs = select_srh.groupby("batsman")['total_runs'].sum()
-print(srh_batsman_runs.index)
-print(srh_batsman_runs.values)
+# print(rcb_extra_runs)
+actual_runs_without_extras = srh_batsman_runs - rcb_extra_runs
+# print(actual_runs.index)
+# print(actual_runs.values)
+# print(srh_batsman_runs.index)
+# print(srh_batsman_runs.values)
 colors = plt.cm.tab10(np.arange(len(srh_batsman_runs)))
-ax[1].bar(srh_batsman_runs.index, srh_batsman_runs.values,
+ax[1].bar(srh_batsman_runs.index, actual_runs_without_extras.values,
           color=colors)
 ax[1].set_title("Batsman Contribution")
 ax[1].set_xlabel("Batsman Name")
